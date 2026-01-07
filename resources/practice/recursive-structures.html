@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Recursive Structures Questions - COMP110 - 24F</title>
+  <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1767801253.736748">
+</head>
+
+<body>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand">COMP 110</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/syllabus" class="nav-link">syllabus</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="lessons-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1>Recursive Structures Questions</h1>
+        <hr class="title" />
+      </div>
+    </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div id="menu-overview" class="link-page horizon-box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview  <img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul class="overview-item"><ul>
+<li><a href="#multiple-choice">Multiple Choice</a></li>
+<li><a href="#code-writing">Code Writing</a></li>
+<li><a href="#short-answer">Short Answer</a></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><p>Any questions that reference the <code>Node</code> class are referring to a class defined in the following way:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>    <span class="im">from</span> __future__ <span class="im">import</span> annotations</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    <span class="kw">class</span> Node:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>        value: <span class="bu">int</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>        <span class="bu">next</span>: Node <span class="op">|</span> <span class="va">None</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>        <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, val: <span class="bu">int</span>, <span class="bu">next</span>: Node <span class="op">|</span> <span class="va">None</span>):</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>            <span class="va">self</span>.value <span class="op">=</span> val</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>            <span class="va">self</span>.<span class="bu">next</span> <span class="op">=</span> <span class="bu">next</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>        <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>            rest: <span class="bu">str</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>            <span class="cf">if</span> <span class="va">self</span>.<span class="bu">next</span> <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a>                rest <span class="op">=</span> <span class="st">&quot;None&quot;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>            <span class="cf">else</span>:</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>                rest <span class="op">=</span> <span class="bu">str</span>(<span class="va">self</span>.<span class="bu">next</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a>            <span class="cf">return</span> <span class="ss">f&quot;</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>value<span class="sc">}</span><span class="ss"> -&gt; </span><span class="sc">{</span>rest<span class="sc">}</span><span class="ss">&quot;</span></span></code></pre></div>
+<h2 id="multiple-choice">Multiple Choice</h2>
+<ol type="1">
+<li><p>(Select all that apply) Which of the following properties of a recursive function will ensure that it <em>does not</em> have an infinite loop?</p>
+<ol type="a">
+<li><p>The function calls itself in the recursive case.</p></li>
+<li><p>The recursive case progresses towards the base case.</p></li>
+<li><p>The base case returns a result directly (it does not call the function again).</p></li>
+<li><p>The base case is always reached.</p></li>
+<li><p>None of the above</p></li>
+</ol></li>
+<li><p>(Fill in the blank) A linked list in python consists of one or more instances of the _____ class.</p>
+<ol type="a">
+<li><p><code>list</code></p></li>
+<li><p><code>int</code></p></li>
+<li><p><code>Node</code></p></li>
+<li><p><code>None</code></p></li>
+<li><p>None of the above</p></li>
+</ol></li>
+<li><p>(True/False) Attempting to access the <code>value</code> or <code>next</code> attribute of <code>None</code> will result in an error.</p></li>
+<li><p>(True/False) There is no way to traverse to the start of a linked list that has multiple Nodes given only a reference to the last <code>Node</code>.</p></li>
+</ol>
+<details>
+<p><summary>SOLUTIONS</summary></p>
+<ol type="1">
+<li><p>B, C, and D. A is true of all recursive functions, but does not guarantee that there won’t be an infinite loop.</p></li>
+<li><p>C</p></li>
+<li><p>True, attempting to access any attributes of <code>None</code> will result in an error since it has no attributes.</p></li>
+<li><p>True, Nodes only know about the <code>Node</code> “in front” of them, or the next <code>Node</code>, so you cannot move backwards in a linked list.</p></li>
+</ol>
+</details>
+<h2 id="code-writing">Code Writing</h2>
+<ol type="1">
+<li><p>Write a recursive function (not a method of the <code>Node</code> class) named <code>recursive_range</code> with <code>start</code> and <code>end</code> <code>int</code> parameters that will create a linked list with the Nodes having values counting from <code>start</code> to <code>end</code>, not including <code>end</code>, either counting down (decrementing) or up (incrementing) depending on what <code>start</code> and <code>end</code> are. The function signature is below to get you started.</p>
+<p><code>def recursive_range(start: int, end: int) -&gt; Node | None:</code></p></li>
+<li><p>Write a recursive method of the <code>Node</code> class named <code>append</code> that has parameters <code>self</code> and <code>new_val</code> which is of type <code>int</code>, and this method should create a new <code>Node</code> at the end of the linked list and return <code>None</code>. In other words, the last <code>Node</code> object before this method is called will have a <code>next</code> attribute of <code>None</code>, but after this method is called, it should have a <code>next</code> attribute equal to a <code>Node</code> object with value <code>new_val</code> and <code>next</code> attribute being <code>None</code> (since that new node is now the last <code>Node</code> in the linked list).</p></li>
+<li><p>Write a recursive method of the <code>Node</code> class named <code>get_length</code> that has parameters <code>self</code> and <code>count</code> which is of type <code>int</code>, which if you were to call with a <code>count</code> argument of 0, would return the length of the linked list starting with <code>self</code> (not including <code>None</code>). Hint: Use <code>count</code> to keep track of a <code>Node</code> count between function calls. How would you write this method as an <em>iterative</em> function (with no <code>count</code> parameter)?</p></li>
+</ol>
+<details>
+<p><summary>SOLUTIONS</summary></p>
+<ol type="1">
+<li><p>Recursive range has two base cases, and the one that is used depends on if <code>start</code> is greater than or less than <code>end</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>    <span class="kw">def</span> recursive_range(start: <span class="bu">int</span>, end: <span class="bu">int</span>) <span class="op">-&gt;</span> Node <span class="op">|</span> <span class="va">None</span>:</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>        <span class="cf">if</span> start <span class="op">==</span> end:</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>            <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>        <span class="cf">elif</span> start <span class="op">&lt;</span> end:</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>            <span class="cf">return</span> Node(start, recursive_range(start <span class="op">+</span> <span class="dv">1</span>, end))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>        <span class="cf">else</span>:</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>            <span class="cf">return</span> Node(start, recursive_range(start <span class="op">-</span> <span class="dv">1</span>, end))</span></code></pre></div></li>
+<li><p>Here is one way to make the <code>append</code> method:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>    <span class="kw">def</span> append(<span class="va">self</span>, new_val: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>        <span class="cf">if</span> <span class="va">self</span>.<span class="bu">next</span> <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>            <span class="va">self</span>.<span class="bu">next</span> <span class="op">=</span> Node(new_val, <span class="va">None</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>        <span class="cf">else</span>:</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>            <span class="va">self</span>.<span class="bu">next</span>.append(new_val)</span></code></pre></div></li>
+<li><p>Here are two possibilities:</p></li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>    <span class="kw">def</span> get_length(<span class="va">self</span>, count: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>        <span class="cf">if</span> <span class="va">self</span>.<span class="bu">next</span> <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>            <span class="cf">return</span> count <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>        <span class="cf">else</span>:</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>            <span class="cf">return</span> <span class="va">self</span>.<span class="bu">next</span>.get_length(count <span class="op">+</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>    <span class="kw">def</span> get_length(<span class="va">self</span>, count: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>        count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>        <span class="cf">if</span> <span class="va">self</span>.<span class="bu">next</span> <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>            <span class="cf">return</span> count</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>        <span class="cf">else</span>:</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>            <span class="cf">return</span> <span class="va">self</span>.<span class="bu">next</span>.get_length(count)</span></code></pre></div>
+</details>
+<h2 id="short-answer">Short Answer</h2>
+<ol type="1">
+<li><p>Based on the following code snippet, what would be the output of the following lines of code given in parts 1.1-1.4?</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>    <span class="im">from</span> __future__ <span class="im">import</span> annotations</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>    <span class="co"># Node class definition included for reference!</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>    <span class="kw">class</span> Node:</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>        value: <span class="bu">int</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>        <span class="bu">next</span>: Node <span class="op">|</span> <span class="va">None</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>        <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, val: <span class="bu">int</span>, <span class="bu">next</span>: Node <span class="op">|</span> <span class="va">None</span>):</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a>            <span class="va">self</span>.value <span class="op">=</span> val</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a>            <span class="va">self</span>.<span class="bu">next</span> <span class="op">=</span> <span class="bu">next</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a>        <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a>            rest: <span class="bu">str</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true"></a>            <span class="cf">if</span> <span class="va">self</span>.<span class="bu">next</span> <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true"></a>                rest <span class="op">=</span> <span class="st">&quot;None&quot;</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true"></a>            <span class="cf">else</span>:</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true"></a>                rest <span class="op">=</span> <span class="bu">str</span>(<span class="va">self</span>.<span class="bu">next</span>)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true"></a>            <span class="cf">return</span> <span class="ss">f&quot;</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>value<span class="sc">}</span><span class="ss"> -&gt; </span><span class="sc">{</span>rest<span class="sc">}</span><span class="ss">&quot;</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true"></a>    x: Node <span class="op">=</span> Node(<span class="dv">4</span>, <span class="va">None</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true"></a>    y: Node <span class="op">=</span> Node(<span class="dv">8</span>, <span class="va">None</span>)</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true"></a></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true"></a>    x.<span class="bu">next</span> <span class="op">=</span> y</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true"></a>    z: Node <span class="op">=</span> Node(<span class="dv">16</span>, <span class="va">None</span>)</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true"></a></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true"></a>    z.<span class="bu">next</span> <span class="op">=</span> x</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true"></a></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true"></a>    x <span class="op">=</span> Node(<span class="dv">32</span>, <span class="va">None</span>)</span></code></pre></div>
+<p>1.1. <code>print(z.next.next.value)</code></p>
+<p>1.2. <code>print(y.next)</code></p>
+<p>1.3. <code>print(x)</code></p>
+<p>1.4. <code>print(z)</code></p></li>
+</ol>
+<details>
+<p><summary>SOLUTIONS</summary></p>
+<ol type="1">
+<li><p>Question 1 answers:</p>
+<p>1.1. <code>8</code></p>
+<p>1.2. <code>None</code></p>
+<p>1.3. <code>32 -&gt; None</code></p>
+<p>1.4. <code>16 -&gt; 4 -&gt; 8 -&gt; None</code></p></li>
+</ol>
+</details>
+</div>
+
+       
+
+    </div> 
+
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s): Benjamin Eldridge</span>
+    </div>
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2023 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>

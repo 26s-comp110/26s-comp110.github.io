@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Syllabus - COMP110 - 24F</title>
+  <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1767801272.6417422">
+</head>
+
+<body>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand">COMP 110</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/syllabus" class="nav-link">syllabus</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="logistics-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1>Syllabus</h1>
+        <hr class="title" />
+      </div>
+    </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div id="menu-overview" class="link-page horizon-box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview  <img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul class="overview-item"><ul>
+<li><a href="#general-course-info">General Course Info</a>
+<ul>
+<li><a href="#curriculum">Curriculum</a></li>
+<li><a href="#course-description-target-audience-and-prerequisites">Course Description, Target Audience, and Prerequisites</a></li>
+<li><a href="#goals-and-key-learning-objectives">Goals and Key Learning Objectives</a></li>
+</ul></li>
+<li><a href="#course-structure">Course Structure</a>
+<ul>
+<li><a href="#instructional-format">Instructional Format</a></li>
+<li><a href="#quizzes-and-required-synchronous-days">Quizzes and Required Synchronous Days</a></li>
+<li><a href="#office-hours-and-tutoring">Office Hours and Tutoring</a></li>
+<li><a href="#textbooks-and-resources">Textbooks and Resources</a></li>
+<li><a href="#course-schedule">Course Schedule</a></li>
+</ul></li>
+<li><a href="#course-expectations-grading">Course Expectations + Grading</a>
+<ul>
+<li><a href="#course-load-expectation">Course Load Expectation</a></li>
+<li><a href="#course-requirements-and-policies">Course Requirements and Policies</a></li>
+<li><a href="#grading-criteria">Grading Criteria</a></li>
+<li><a href="#autograding-and-resubmissions">Autograding and Resubmissions</a></li>
+<li><a href="#early-submission-of-programming-assignments">Early submission of programming assignments</a></li>
+<li><a href="#regrade-requests">Regrade Requests</a></li>
+<li><a href="#late-policies-and-drops">Late policies and Drops</a></li>
+<li><a href="#late-point-forgiveness-insurance">Late Point Forgiveness Insurance</a></li>
+<li><a href="#grading-scale-breakdown">Grading Scale Breakdown</a></li>
+<li><a href="#course-passage-policy">Course Passage Policy</a></li>
+</ul></li>
+<li><a href="#honor-code-policies">Honor Code Policies</a>
+<ul>
+<li><a href="#honor-code-and-collaboration-policy">Honor Code and Collaboration Policy</a></li>
+<li><a href="#permitted-constructs">Permitted Constructs</a></li>
+<li><a href="#use-of-artificial-intelligence">Use of Artificial Intelligence</a></li>
+<li><a href="#collaboration-policy-on-ungraded-general-course-concepts">Collaboration Policy on Ungraded, General Course Concepts</a></li>
+<li><a href="#collaboration-on-graded-work">Collaboration on Graded Work</a></li>
+<li><a href="#permitted-resources-on-graded-work">Permitted Resources on Graded Work</a></li>
+<li><a href="#tutors-and-informal-help-from-comp-friends">Tutors and Informal Help from COMP Friends</a></li>
+<li><a href="#code-review-test">Code Review Test</a></li>
+</ul></li>
+<li><a href="#other-policies">Other Policies</a>
+<ul>
+<li><a href="#academic-policies"><strong>Academic Policies</strong></a></li>
+<li><a href="#services-student-support-policies"><strong>Services &amp; Student Support Policies</strong></a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="general-course-info">General Course Info</h1>
+<p>Course: Introduction to Programming</p>
+<p>Term: Fall 2025</p>
+<p>Department: COMP</p>
+<p>Course Number: 110</p>
+<p>Credit Hours: 3</p>
+<p>Course Website: <a href="https://25f-comp110.github.io/" class="uri">https://25f-comp110.github.io/</a></p>
+<p>Section: 003</p>
+<p>Time and Location: Tues/Thurs 12:30 PM-1:45 PM, Hamilton Hall Rm 100</p>
+<p>Instructor:</p>
+<p><a href="https://alyssalytle.github.io/">Alyssa Lytle</a></p>
+<ul>
+<li>Office: FB 136</li>
+<li>Office Hours: <a href="https://alyssalytle.github.io/schedule.html">By Appointment</a></li>
+<li>E-mail: <a href="mailto:comp110help@gmail.com" class="email">comp110help@gmail.com</a></li>
+</ul>
+<h2 id="curriculum">Curriculum</h2>
+<p>A list of concepts covered in this class can be found <a href="/resources/curriculum.html">here</a></p>
+<h2 id="course-description-target-audience-and-prerequisites">Course Description, Target Audience, and Prerequisites</h2>
+<p>COMP110 introduces students to programming and data science from a computational perspective. With an emphasis on modern applications in society, students gain experience with problem decomposition, algorithms for data analysis, abstraction design, and ethics in computing. No prior programming experience is expected or needed. Foundational concepts include data types, sequences, boolean logic, control flow, functions/methods, classes/objects, input/output, data organization, transformations, and visualizations.</p>
+<ul>
+<li>IDEAs in Action General Education logo IDEAs in Action Gen Ed: FC-QUANT.</li>
+<li>Making Connections Gen Ed: QR.</li>
+<li>Pre-requisite: A C or better in one of the following courses: MATH 130, 152, 210, 231, 129P, or PHIL 155, or STOR 112, 113, 120, 151, 155.</li>
+</ul>
+<h2 id="goals-and-key-learning-objectives">Goals and Key Learning Objectives</h2>
+<p>This course is intended to teach basic computer programming skills to students ranging from those with no prior programming experience to those with some prior experience. This course aims to teach general programming language concepts and semantics, problem definition, problem solving, logical and recursive thinking, through algorithm development and writing programs. Additionally, the course offers broad exposure to some of today’s key issues of computing in society.</p>
+<p>The course also adresses the following IDEAs in Action General Education Quantitative Reasoning Learning outcomes:</p>
+<ol type="1">
+<li>Summarize, interpret, and present quantitative data in mathematical forms, such as graphs, diagrams, tables, or mathematical text.</li>
+<li>Develop or compute representations of data using mathematical forms or equations as models, and use statistical methods to assess their validity.</li>
+<li>Make and evaluate important assumptions in the estimation, modeling, and analysis of data, and recognize the limitations of the results.</li>
+<li>Apply mathematical concepts, data, procedures, and solutions to make judgments and draw conclusions.</li>
+<li>Synthesize and present quantitative data to others to explain findings or to provide quantitative evidence in support of a position.</li>
+</ol>
+<h1 id="course-structure">Course Structure</h1>
+<h2 id="instructional-format">Instructional Format</h2>
+<p>Most weeks will be structured in the following way: One day will be dedicated to learning new concepts and completing a lesson assignment (LS), and one day will be dedicated to reinforcing and practicing those concepts. This will involve in-class practice problems and coding Challenge Questions (CQ).</p>
+<h2 id="quizzes-and-required-synchronous-days">Quizzes and Required Synchronous Days</h2>
+<p>Quizzes and examinations are offered in-person only this semester. The format is pencil and paper. We will provide the quizzes/exams/paper, you only need to bring pencils, a good eraser, and your ONECard to quizzes and exams.</p>
+<p><strong>Quiz Dates</strong></p>
+<!-- * Quiz (QZ) 00: Thurs, August 28
+* Quiz (QZ) 01: Thurs, September 18
+* Quiz (QZ) 02: Thurs, October 09
+* Quiz (QZ) 03: Thurs, October 30
+* Quiz (QZ) 04: Thurs, November 20
+* Final (FN) Exam: Saturday, December 6, 2025, 4-7 PM (Makeup: 12pm on Sunday, Dec 7th in SN014) -->
+<p><strong>Quiz Absences</strong></p>
+<p>The quizzes will be held during the section you are registered for and are synchronous, in-person for all sections.</p>
+<p>If you are a part of an organization whose authorized university absences will conflict with two or more of the key dates of quizzes, you should plan on taking COMP110 in a future semester when these unfortunate, but important, conflicts will not arise.</p>
+<p>You may have an unexcused absence for up to one quiz.</p>
+<p>For an excused absence, please fill out <a href="https://airtable.com/app962bECbOnwRJCo/pagNFxMZwj0DnV5MO/form">this form</a>.</p>
+<p>To ensure these assessments are fair for all students enrolled in COMP110 this term, we can only offer quiz makeups for officially documented university-approved absences. You must show the instructor proof of a university-approved absence and be available to take the quiz within two business days of the official quiz date. Merely being absent from a quiz that is not university approved results in the quiz’s credit not being drawn down from your final exam score’s weight. As such, this is not a penalty; your mastery of this quiz’ material will be assessed on the cumulative final exam.</p>
+<p>We can offer everyone absent from a quiz the same learning experience of sitting for the quiz at some later date and receiving feedback on it, but a quiz taken in this fashion is not for credit and will not count toward nor against your mastery grade to ensure fairness to all students.</p>
+<p><strong>Final Exam Makeup</strong></p>
+<p>You must have a <a href="https://dos.unc.edu/student-support/class-absences-final-exam-rescheduling/">university approved</a> reason for needing to take the final on a makeup day.</p>
+<p>If this applies to you, please fill out BOTH: 1. Our Internal <a href="/">Final Exam Excuse Form</a> 2. UNC’s Official <a href="https://eef.oasis.unc.edu/">Final Exam Excuse Form</a></p>
+<h2 id="office-hours-and-tutoring">Office Hours and Tutoring</h2>
+<p>The most valuable resources in COMP110 are office hours and tutoring. The resources are offered strictly in-person. Information and times can be found <a href="/support">here</a>.</p>
+<h2 id="textbooks-and-resources">Textbooks and Resources</h2>
+<p>The web page is the primary resource for this course. There is no textbook for COMP110. We will distribute occasional readings, reference material, and tutorials via the course website and Canvas.</p>
+<h2 id="course-schedule">Course Schedule</h2>
+<p>You can find the most up-to-date course schedule <a href="https://docs.google.com/spreadsheets/d/1kfDGPfa00H2RkbAck0jjDmsgzE4jykKE1nSG-hgzxt0/edit?usp=sharing">here</a>.</p>
+<h1 id="course-expectations-grading">Course Expectations + Grading</h1>
+<h2 id="course-load-expectation">Course Load Expectation</h2>
+<p>COMP110 is a rigorous introductory STEM course. Learning how to program is an acquired, practiced skill much like playing a musical instrument or learning a new craft. The amount of time you individually spend practicing programing and working on assignments, outside of any other help, will significantly impact your success in the course. You should expect to spend 2.5 hours per week on lecture ON TOP OF about 9 hours per week outside of lecture working on assignments and studying. We DO NOT recommended taking COMP110 in a semester when you are enrolled in 17 or more credit hours.</p>
+<h2 id="course-requirements-and-policies">Course Requirements and Policies</h2>
+<p>You should plan to attend all in person lectures and check the course page for announcements and updates. You should complete all programming and reading assignments on time.</p>
+<p>For in-person lectures, please show up at least five minutes early so that the class can begin promptly at its scheduled start time.</p>
+<h2 id="grading-criteria">Grading Criteria</h2>
+<p>To do well in this course you must come to your own individual mastery of introductory programming concepts and engage with broader intellectual questions of computing in society. Final grades are calculated with the following weights for each course component:</p>
+<ul>
+<li>30% - (EX) Programming Exercises</li>
+<li>10% - (LS) Lessons (Graded for Correctness)</li>
+<li>10% - (CQ) Challenge Questions (Graded for Correctness)</li>
+<li>40% - 4x Quizzes</li>
+<li>10% - Final Exam</li>
+</ul>
+<p>The quiz/final exam grading policy is updated to the following: The cumulative final exam is worth 50% of your final grade at the start of the term. Each quiz you take accounts for 10% of your final grade and reduces the weight of your final examination by 10%. There are no drops.</p>
+<p>For example: By taking all 5 quizzes, your final exam’s weight is 10% of your final grade. If you must be absent from a quiz (see policy below), then the four quizzes you take will account for 30% of your final grade and your final exam will account for 20%.</p>
+<p>If, and only if, you take all quizzes and your final examination score exceeds your lowest quiz score, then we will retroactively grant you an absence for the lowest quiz score and your final exam score will be worth 18%.</p>
+<h2 id="autograding-and-resubmissions">Autograding and Resubmissions</h2>
+<p>Grades on programming assignments have two components: autograded points and manually graded points. You should take note of how many autograded vs. manually graded points there are ahead of submission. You are permitted, and encouraged, to resubmit your programming assignments as many times as you need in order to earn full credit on the autograded points of an assignment. There is no penalty for resubmission. The autograder will run and assign a score within a few minutes of submission. We will not go back and manually assign any credit for autograder points you failed to earn, so you can know and be aware of your autograded points upon submission. If you do not understand the error output of some autograded point deduction, please come see us in office hours!</p>
+<h2 id="early-submission-of-programming-assignments">Early submission of programming assignments</h2>
+<p>Programming assignments (exercises and projects) whose final submission is made 48 hours, or more, before their deadline will receive a 5% early hand-in bonus on the assignment’s autograded score. Submissions that fall within the early window of 24-48 hours before the deadline will receive a 3% early hand-in bonus. Submissions made within 24 hours of the deadline are not subject to any bonus. The early hand-in bonus does not apply to manually graded points on projects.</p>
+<h2 id="regrade-requests">Regrade Requests</h2>
+<p>Regrade requests for quizzes and other manually graded assignments are open for 72 hours following the release of the grade. If you missed any of the points on a given assignment, you should review work as soon as grades are posted to be sure you understand why you missed something. This will help bring your understanding of concepts closer to comprehension faster. In the event we graded something improperly, select the specific question on gradescope and click the “Regrade Request” button at the bottom. If there are multiple questions, submit multiple requests one per question, rather than batching them together. Do not use regrade requests to ask why something is wrong, come work with us in tutoring or office hours to understand the problem at hand.</p>
+<h2 id="late-policies-and-drops">Late policies and Drops</h2>
+<p>All assignments, outside of assessments such as quizzes and the final exam, will have an 11:59pm deadline on their due date.</p>
+<p>Lesson responses and programming exercises will all have deadlines and late periods. The following policies apply:</p>
+<p>Lesson and Challenge Question responses on Gradescope are assigned on lecture days and must be completed before 11:59pm the same day unless noted otherwise. To ensure fairness to everyone, as emergencies may arise, we will drop the 2 lowest lesson scores and the 1 lowest challenge question score, including zeros.</p>
+<p>For all assignments, submissions made after the deadline will have a 15% late penalty applied. <strong>The lowest exercise score, including a zero, will be dropped.</strong></p>
+<h2 id="late-point-forgiveness-insurance">Late Point Forgiveness Insurance</h2>
+<p>As “insurance” against illness, computer crashes, sporting events, conflicts with other coursework, and <em>waves arms around in the air</em> life, every student in the course is automatically forgiven the following points worth of late penalties on assignments at the end of the term:</p>
+<ul>
+<li>Lessons: forgiven up to 2 late lesson penalties</li>
+<li>Challenge Questions: forgiven up to 2 late CQ penalties</li>
+<li>Exercises: forgiven up to 2 late exercise penalties</li>
+</ul>
+<p>Like real insurance, there is no reward for not needing to use these points and you should try to avoid using them outside of unpredictable, emergency situations like a computer needing repair.</p>
+<h2 id="grading-scale-breakdown">Grading Scale Breakdown</h2>
+<pre><code>&lt;table&gt;
+    &lt;caption&gt;Grading scale for letter grade.&lt;/caption&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;Letter&lt;/th&gt;
+            &lt;td&gt;Percentage&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;A&lt;/th&gt;
+            &lt;td&gt;93&amp;ndash;100%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;A&amp;minus;&lt;/th&gt;
+            &lt;td&gt;90&amp;ndash;92%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;B+&lt;/th&gt;
+            &lt;td&gt;87&amp;ndash;89%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;B&lt;/th&gt;
+            &lt;td&gt;83&amp;ndash;86%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;B&amp;minus;&lt;/th&gt;
+            &lt;td&gt;80&amp;ndash;82%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;C+&lt;/th&gt;
+            &lt;td&gt;77&amp;ndash;79%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;C&lt;/th&gt;
+            &lt;td&gt;73&amp;ndash;76%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;C&amp;minus;&lt;/th&gt;
+            &lt;td&gt;70&amp;ndash;72%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;D+&lt;/th&gt;
+            &lt;td&gt;67&amp;ndash;69%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;D&lt;/th&gt;
+            &lt;td&gt;63&amp;ndash;66%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;D&amp;minus;&lt;/th&gt;
+            &lt;td&gt;60&amp;ndash;62%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;F&lt;/th&gt;
+            &lt;td&gt;0&amp;ndash;59%&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+<p>In cases of fractional points, grades will be rounded up if greater than 0.4999999999…</p>
+<h2 id="course-passage-policy">Course Passage Policy</h2>
+<p>In order to pass COMP110, you must accomplish ALL of the following:</p>
+<ul>
+<li>Have a passing grade given the rubric of weights above and grading scale below</li>
+<li>Take at least 4 quizzes</li>
+<li>Score greater than 40% on the final exam</li>
+</ul>
+<h1 id="honor-code-policies">Honor Code Policies</h1>
+<h2 id="honor-code-and-collaboration-policy">Honor Code and Collaboration Policy</h2>
+<p>In order to do well in this course, you must come to your own individual understanding of the material. As such, collaboration is prohibited outside of the following policies.</p>
+<p>Make sure that you are familiar with The <a href="https://studentconduct.unc.edu/">UNC Honor Code</a>. You will be required to sign an Honor Code pledge to hand in with every quiz and the final as well as “sign” the code you submit for grading by filling in your PID in the required <code>__author__</code> variable. Failing to do so may result in no credit assigned for the assignment.</p>
+<h2 id="permitted-constructs">Permitted Constructs</h2>
+<p>If we see the use of an outside contruct before it’s been covered in class (e.g. for loops), we may assume the usage of unpermitted aid and will deduct points accordingly</p>
+<h2 id="use-of-artificial-intelligence">Use of Artificial Intelligence</h2>
+<p>Use of generative AI tools of any kind is not permitted in this course. Any use of these tools will be considered an instance of academic dishonesty and will be referred to the Honor System.</p>
+<h2 id="collaboration-policy-on-ungraded-general-course-concepts">Collaboration Policy on Ungraded, General Course Concepts</h2>
+<p>You absolutely may, and are encouraged to, discuss general course concepts (i.e. not assignment-specific) material with anyone, including other current students and tutors. This includes going over lecture slides, documentation, code examples covered in lecture, study guides, etc. The examples you use to discuss general course materials must be from lecture or your own creativity, you cannot use examples directly drawn from any assignments handed in.</p>
+<h2 id="collaboration-on-graded-work">Collaboration on Graded Work</h2>
+<p>No collaboration with peers inside the course, or anyone outside the course, with the exception of our course TAs while they are working as a TA, is allowed on exercises, lecture assignments, quizzes, and exams. Your ability to complete each individually is critical for your ability to do well in this course. Illegal collaboration is easily detected in COMP110 because Gradescope has built-in support for Stanford’s MOSS program (Measures of Software Similarity), as well as other machine learning techniques. Every year, a number of violations are caught and prosecuted in the Honor Court, so far always resulting in guilty convictions and sanctions. Avoiding any fears here is simple: work on assignments and assessments on your own and come to office hours when you have questions. Please note that if you know someone who is a UTA, you are only permitted to receive help from them while they are working in their official capacity. Receiving help from a UTA outside of their working hours is considered an unfair advantage for academic gain and is an honor code violation.</p>
+<h2 id="permitted-resources-on-graded-work">Permitted Resources on Graded Work</h2>
+<ul>
+<li>Materials on the course website and any linked resources</li>
+<li>Instruction received from UTAs</li>
+<li>Official programming language documentation</li>
+<li>Online documentation for specific errors you encounter</li>
+</ul>
+<p>The following are not permitted resources on coursework handed in for credit and are considered honor code violations:</p>
+<ul>
+<li>Asking for help on an assignment or assessment on GroupMe, or any other mobile or web application, groupchat, or forum.</li>
+<li>Talking about specific assignments with peers in the course or anyone outside the course with the exception of UTAs.</li>
+<li>Looking at someone else’s screen, whether in person or shared remotely, while working on an assignment. Letting someone else look at or share your screen.</li>
+<li>Copying code found on any website or community such as StackOverflow, Github, Chegg, or CourseHero.</li>
+<li>Sharing or reusing code with any peer currently in the course or anyone who has previously taken the course.</li>
+</ul>
+<p>When in doubt, ask me.</p>
+<h2 id="tutors-and-informal-help-from-comp-friends">Tutors and Informal Help from COMP Friends</h2>
+<p>Tutors, tutoring organizations, and COMP friends <strong>are not allowed</strong> to help you with any assignments handed in for credit. They may help you with general course concept questions, however we encourage you to rely on TA assistance foremost.</p>
+<h2 id="code-review-test">Code Review Test</h2>
+<p>I reserve the right to, at any time, ask you to submit to a “code review” test with me or a head TA. We may ask you to meet to explain any line of code or decision made in your program that we deem suspicious or confusing. Thus, you should be able to comfortably explain why you (and you alone) wrote any single line of code in an assignment handed in for credit. Should you be unable to do so, your grade will be a zero for the assignment in question and you may be taken to honor court depending on the severity of the infraction.</p>
+<h1 id="other-policies">Other Policies</h1>
+<h3 id="academic-policies"><strong>Academic Policies</strong></h3>
+<h4 id="university-class-attendance-policy"><em>University Class Attendance Policy</em></h4>
+<p><strong>University Policy:</strong> As stated in the University’s <a href="https://catalog.unc.edu/policies-procedures/attendance-grading-examination/#text">Class Attendance Policy</a>, no right or privilege exists that permits a student to be absent from any class meetings, except for these University Approved Absences:</p>
+<ol type="1">
+<li>Authorized University activities: <a href="https://uaao.unc.edu/">University Approved Absence Office (UAAO)</a> website provides information and <a href="https://uaao.unc.edu/faqs-for-students/">FAQs for students</a> and <a href="https://uaao.unc.edu/faqs-for-faculty/">FAQs for faculty</a> related to University Approved Absences<br />
+</li>
+<li>Disability/religious observance/pregnancy/short-term military service, as required by law and approved by the <a href="https://eoc.unc.edu/what-we-do/accommodations/">University Compliance Office</a> , or in the case of short-term military service, the Dean of Students<br />
+</li>
+<li>Significant health condition and/or personal/family emergency as approved by the <a href="https://odos.unc.edu/">Office of the Dean of Students</a>, <a href="https://gvsc.unc.edu/">Gender Violence Service Coordinators</a>, and/or the <a href="https://eoc.unc.edu/what-we-do/accommodations/">University Compliance Office</a>.</li>
+</ol>
+<h4 id="code-of-conduct"><em>Code of Conduct</em></h4>
+<p>All students are expected to adhere to University policy and follow the guidelines of the UNC Student Code of Conduct. Additional information can be found at <a href="https://studentconduct.unc.edu/">https://studentconduct.unc.edu/</a>.</p>
+<h4 id="artificial-intelligence-ai-use-policy-required-statement-on-cas-syllabi"><em>Artificial Intelligence (AI) Use Policy (<strong>required</strong> statement on <strong>CAS</strong> syllabi)</em></h4>
+<p>All Carolina students are expected to follow these AI guidelines:</p>
+<ol type="1">
+<li>AI should help you think, not think for you. You may be able to use these tools to brainstorm ideas, research topics, and analyze problems, but you must decide what’s appropriate and accurate.<br />
+</li>
+<li>Engage responsibly with AI. You must evaluate AI-generated outputs for potential biases, limitations, inaccuracies, false output, and ethical implications. Do not put personal or confidential data into these tools.<br />
+</li>
+<li>The use of AI must be open and documented. You should declare, explain, and cite any use of AI in the creation of your work using applicable standards (e.g., APA, MLA, course guidelines). Understand that you are ultimately 100% responsible for your final product.<br />
+</li>
+<li>Follow specific AI guidelines in this syllabus. If you are unsure, check with me. Guidance offered in this syllabus would be referenced should an issue be referred to Student Conduct for alleged academic misconduct.</li>
+</ol>
+<h4 id="syllabus-changes"><em>Syllabus Changes</em></h4>
+<p>The instructor reserves the right to make changes to the syllabus including project due dates and test dates. These changes will be announced as early as possible.</p>
+<h4 id="acceptable-use-policy"><em>Acceptable Use Policy</em></h4>
+<p>By attending the University of North Carolina at Chapel Hill, you agree to abide by the University of North Carolina at Chapel Hill policies related to the acceptable use of IT systems and services. The Acceptable Use Policy (AUP) sets the expectation that you will use the University’s technology resources responsibly, consistent with the University’s mission. In the context of a class, it’s quite likely you will participate in online activities that could include personal information about you or your peers, and the AUP addresses your obligations to protect the privacy of class participants. In addition, the AUP addresses matters of others’ intellectual property, including copyright. These are only a couple of typical examples, so you should consult the full <a href="https://policies.unc.edu/TDClient/2833/Portal/KB/ArticleDet?ID=131247">Information Technology Acceptable Use Policy</a>, which covers topics related to using digital resources, such as privacy, confidentiality and intellectual property.</p>
+<p>Additionally, consult the <a href="https://safecomputing.unc.edu/">Safe Computing at UNC</a> website for information about data security policies, updates, and tips on keeping your identity, information, and devices safe.</p>
+<h4 id="data-security-privacy"><em>Data Security &amp; Privacy</em></h4>
+<p>UNC-Chapel Hill is committed to fulfilling its responsibilities of transparency as a state-sponsored institution of higher learning, protecting certain types of information, and using information Carolina collects only for appropriate purposes. Consult the <a href="https://www.unc.edu/about/privacy-statement/">UNC-Chapel Hill Privacy Statement</a> for additional information.</p>
+<h4 id="grade-appeal-process"><em>Grade Appeal Process</em></h4>
+<p>If you have any concerns with grading and/or feel you have been awarded an incorrect grade, please discuss it with me as soon as possible. If we cannot resolve the issue, you may talk to our director of undergraduate studies or department chair.</p>
+<h4 id="university-required-statement"><em>University Required Statement</em></h4>
+<p>This course engages diverse scholarly perspectives to develop critical thinking, analysis, and debate and inclusion of a reading does not imply endorsement.</p>
+<h3 id="services-student-support-policies"><strong>Services &amp; Student Support Policies</strong></h3>
+<h4 id="university-compliance-office-formerly-equal-opportunity-and-compliance---accommodations"><em>University Compliance Office (formerly Equal Opportunity and Compliance) - Accommodations</em></h4>
+<p>University Compliance Office (UCO) Accommodations Team (<a href="https://eoc.unc.edu/accommodations/">Accommodations - UNC Equal Opportunity and Compliance)</a> receives requests for accommodations for disability, pregnancy and related conditions, and sincerely held religious beliefs and practices through the University’s Policy on Accommodations. UCO Accommodations team determines eligibility and reasonable accommodations consistent with state and federal laws.</p>
+<h4 id="counseling-psychological-services-caps"><em>Counseling &amp; Psychological Services (CAPS)</em></h4>
+<p>UNC-Chapel Hill is strongly committed to addressing the mental health needs of a diverse student body. The <a href="http://care.unc.edu">Heels Care Network</a> website is a place to access the many mental health resources at Carolina. CAPS is the primary mental health provider for students, offering timely access to consultation and connection to clinically appropriate services. Go to the <a href="https://caps.unc.edu/">CAPS website</a> or visit their facilities on the third floor of the Campus Health building for an initial evaluation to learn more. Students can also call CAPS 24/7 at 919-966-3658 for immediate assistance.</p>
+<h4 id="title-ix-resources"><em>Title IX Resources</em></h4>
+<p>Any student who is impacted by discrimination, harassment, interpersonal (relationship) violence, sexual violence, sexual exploitation, or stalking is encouraged to seek resources on campus or in the community. Reports can be made <a href="https://eoc.unc.edu/report-an-incident/">online to the UCO</a> or by contacting the <a href="mailto:%20titleixcoordinator@unc.edu">University’s Title IX Coordinator</a>, Elizabeth Hall, or the <a href="mailto:reportandresponse@unc.edu">Report and Response Managers</a> in the University Compliance Office (UCO) (formerly the Equal Opportunity and Compliance Office). Please note that I am designated as a Responsible Employee, which means I must report to the UCO any information I receive about the forms of misconduct listed in this paragraph. If you’d like to speak with a confidential resource, those include Counseling and Psychological Services, the University’s Ombuds Office, and the <a href="mailto:gvsc@unc.edu">Gender Violence Services Coordinators</a>. Additional resources are available at <a href="https://safe.unc.edu/">safe.unc.edu</a>.</p>
+<h4 id="policy-on-non-discrimination"><em>Policy on Non-Discrimination</em></h4>
+<p>As set out in the University’s <a href="https://policies.unc.edu/TDClient/2833/Portal/KB/ArticleDet?ID=131717">Policy Statement on Non-Discrimination</a>, the University is committed to providing an environment where all members of our community can learn, work, and thrive. Consistent with these principles and applicable laws, it is therefore the University’s policy not to discriminate on the basis of age, color, disability, gender, gender expression, gender identity, genetic information, national origin, race, religion, sex, sexual orientation or veteran status as consistent with the University’s <a href="https://policies.unc.edu/TDClient/2833/Portal/KB/ArticleDet?ID=132487">Policy on Prohibited Discrimination, Harassment and Related Misconduct</a>. No person, on the basis of protected status, shall be excluded from participation in, be denied the benefits of, or be subjected to unlawful discrimination, harassment, or retaliation under any University program or activity, including with respect to employment terms and conditions. The University will consider only relevant factors such as individual abilities and qualifications in admissions, hiring, disciplinary action, and all other decisions and will apply consistent standards of conduct and performance.</p>
+<p>If you are experiencing harassment or discrimination, you can seek assistance and file a report through the Report and Response Coordinators (email <a href="mailto:reportandresponse@unc.edu">reportandresponse@unc.edu</a> or see additional contact info at <a href="https://safe.unc.edu/">safe.unc.edu</a>) or the <a href="https://eoc.unc.edu/report-an-incident/">University Compliance Office.</a> Please note that I am designated as a Responsible Employee, which means that I must report to the UCO any information I receive about harassment or discrimination. If you’d like to speak with a confidential resource, those include Counseling and Psychological Services and the University’s Ombuds Office.</p>
+<h4 id="undergraduate-testing-center"><em>Undergraduate Testing Center</em></h4>
+<p>The College of Arts and Sciences provides a secure, proctored environment in which exams can be taken. The Center works with instructors to proctor exams for their undergraduate students who are not registered with ARS and who do not need testing accommodations as provided by ARS. In other words, the Center provides a proctored testing environment for students who are unable to take an exam at the normally scheduled time (with pre-arrangement by your instructor). For more information, visit the <a href="http://testingcenter.web.unc.edu/">testing center website</a>.</p>
+<h4 id="learning-center"><em>Learning Center</em></h4>
+<p>Want to get the most out of this course or others this semester? Visit <a href="http://learningcenter.unc.edu/">UNC’s Learning Center</a> to make an appointment or register for an event. Their free, popular programs will help you optimize your academic performance. Try academic coaching, peer tutoring, STEM support, ADHD/LD services, workshops and study camps, or review tips and tools available on the website.</p>
+<h4 id="writing-center"><em>Writing Center</em></h4>
+<p>For free feedback on any course writing projects, check out UNC’s Writing Center. Writing Center coaches can assist with any writing project, including multimedia projects and application essays, at any stage of the writing process. You don’t even need a draft to come visit. To schedule a 45-minute appointment, review quick tips, or request written feedback online, visit <a href="http://writingcenter.unc.edu/">UNC’s Writing Center online</a>.</p>
+</div>
+
+       
+
+    </div> 
+
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):        Kris Jordan,        Alyssa Lytle, Izzi Hinks</span>
+    </div>
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2023 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>

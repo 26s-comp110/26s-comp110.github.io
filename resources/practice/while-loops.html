@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> While Loop Questions - COMP110 - 24F</title>
+  <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1767801271.0509846">
+</head>
+
+<body>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand">COMP 110</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/syllabus" class="nav-link">syllabus</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="lessons-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1>While Loop Questions</h1>
+        <hr class="title" />
+      </div>
+    </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div id="menu-overview" class="link-page horizon-box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview  <img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul class="overview-item"><ul>
+<li><a href="#questions">Questions</a>
+<ul>
+<li><a href="#conceptual">Conceptual</a></li>
+<li><a href="#memory-diagram">Memory Diagram</a></li>
+<li><a href="#code-writing">Code Writing</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="questions">Questions</h1>
+<h2 id="conceptual">Conceptual</h2>
+<ol type="1">
+<li><p>What happens if the condition of a while loop is initially <code>False</code>?</p>
+<ol type="a">
+<li><p>The loop will run once.</p></li>
+<li><p>The loop will not run at all.</p></li>
+<li><p>The loop will run infinitely.</p></li>
+<li><p>The loop will throw an error.</p></li>
+</ol></li>
+<li><p>If a <code>while</code> loop statement starts with, <code>while condition:</code>, what must <code>condition</code> evaluate to for the following <code>while</code> loop to execute at least once? What type is <code>condition</code>?</p></li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li>B: The loop will not run at all.</li>
+<li><code>condition</code> must be <code>True</code> to enter the loop. Its type is a <code>bool</code>.</li>
+</ol>
+</details>
+<p> </p>
+<h2 id="memory-diagram">Memory Diagram</h2>
+<ol type="1">
+<li><p>Produce a memory diagram for the following code snippet, being sure to include its stack and output.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="dv">1</span>     <span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="dv">2</span>         <span class="st">&quot;&quot;&quot;Main Function&quot;&quot;&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="dv">3</span>         y: <span class="bu">int</span> <span class="op">=</span> g(<span class="dv">1</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="dv">4</span>         f(y)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="dv">5</span>         <span class="bu">print</span>(g(f(<span class="dv">3</span>)))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="dv">6</span>         </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="dv">7</span>     <span class="kw">def</span> f(x: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="dv">8</span>         <span class="st">&quot;&quot;&quot;Function 0&quot;&quot;&quot;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="dv">9</span>         <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="dv">10</span>            <span class="bu">print</span>(<span class="bu">str</span>(x) <span class="op">+</span> <span class="st">&quot; is even&quot;</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a><span class="dv">11</span>        <span class="cf">else</span>:</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a><span class="dv">12</span>            x <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a><span class="dv">13</span>        <span class="cf">return</span> x</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a><span class="dv">14</span>        </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a><span class="dv">15</span>    <span class="kw">def</span> g(x: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a><span class="dv">16</span>        <span class="st">&quot;&quot;&quot;Function 1&quot;&quot;&quot;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a><span class="dv">17</span>        <span class="cf">while</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a><span class="dv">18</span>            x <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a><span class="dv">19</span>        <span class="cf">return</span> x</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a><span class="dv">20</span> </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a><span class="dv">21</span>    main()</span></code></pre></div>
+<p>1.1. Why is it that <code>main()</code> is defined above <code>f()</code> and <code>g()</code>, but we are able to call <code>f()</code> and <code>g()</code> inside <code>main()</code> without errors?</p>
+<p>1.2. On line 5, when <code>print(g(f(3)))</code> is called, is the code block inside of the <code>while</code> loop ever entered? Why or why not?</p>
+<p>1.3. What would happen if a line was added to the end of the snippet that said <code>print(x)</code>. Why?</p></li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li><figure>
+<img src="https://25f-comp110.github.io/static/practice-mem-diagrams/Qz2-md.png" alt="" /><figcaption>While Loop Memory Diagram</figcaption>
+</figure>
+<p>1.1 Even though main is defined before f and g, it isn’t called until after f and g are defined.</p>
+<p>1.2 No because x = 4, so x % 2 == 1 is False, and therefore the code block inside is never run.</p>
+<p>1.3 There would be an error because x is a local variable inside both f and g. Therefore, the program does not recognize that x exists in this context.</p></li>
+</ol>
+</details>
+<p> </p>
+<h2 id="code-writing">Code Writing</h2>
+<ol type="1">
+<li><p>Write a function named <code>sum_or_factorial</code> using <code>while</code> loops that has an <code>int</code> parameter <code>number</code> and behaves in the following way:</p>
+<p>If <code>number</code> is negative, return <code>-1</code>.</p>
+<p>If <code>number</code> is even, return the sum of all positive integers up to and <em>including</em> <code>number</code>.</p>
+<p>If <code>number</code> is odd, return the product of all positive integers up to and <em>including</em> <code>number</code> (the factorial of <code>number</code>).</p></li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<p>Note: There are many ways you could write this function.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="dv">1</span>     <span class="kw">def</span> sum_or_factorial(number: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="dv">2</span>         <span class="st">&quot;&quot;&quot;Returns the sum up to number if even or the factorial of number if odd.&quot;&quot;&quot;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="dv">3</span>         result: <span class="bu">int</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="dv">4</span>         <span class="cf">if</span> number <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="dv">5</span>             <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="dv">6</span>         <span class="cf">elif</span> number <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a><span class="dv">7</span>             result <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a><span class="dv">8</span>             idx: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a><span class="dv">9</span>             <span class="cf">while</span> idx <span class="op">&lt;=</span> number:</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a><span class="dv">10</span>                result <span class="op">=</span> result <span class="op">+</span> idx</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a><span class="dv">11</span>                idx <span class="op">=</span> idx <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a><span class="dv">12</span>        <span class="cf">else</span>:</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a><span class="dv">13</span>            result <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true"></a><span class="dv">14</span>            idx: <span class="bu">int</span> <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true"></a><span class="dv">15</span>            <span class="cf">while</span> idx <span class="op">&lt;=</span> number:</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true"></a><span class="dv">16</span>                result <span class="op">=</span> result <span class="op">*</span> idx</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true"></a><span class="dv">17</span>                idx <span class="op">=</span> idx <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true"></a><span class="dv">18</span>        <span class="cf">return</span> result</span></code></pre></div>
+</details>
+<p> </p>
+<!-- ## Conceptual
+
+1. Produce a memory diagram for the following code snippet, being sure to include its stack and output.  
+
+        WORD: str = "happy"
+        l1_idx: int = 0
+        l2_idx: int = 0
+        t1: str = ""
+        t2: str = ""
+        n_appearances: int = 0
+
+        while l1_idx < len(WORD):
+            t1 = WORD[l1_idx]
+            n_appearances = 1
+            l2_idx = 0
+
+            while l2_idx < len(WORD):
+                t2 = WORD[l2_idx]
+
+                if (t1 == t2) and (l1_idx != l2_idx):
+                    n_appearances = n_appearances + 1
+                l2_idx = l2_idx + 1
+            print(f"{WORD[l1_idx]} appears {n_appearances} times.")
+            l1_idx = l1_idx + 1
+
+1.1 What would happen if `while l1_idx < len(WORD)` in line 8 was replaced with `while l1_idx < len(WORD) - 1`? Why?
+
+1.2 What would happen if `l2_idx=0` was moved to inside the second while loop? In other words, what if lines 11-13 were changed to:
+
+
+```
+    while l2_idx < len(WORD):
+        l2_idx = 0
+```
+
+1.3 What would happen if, in line 16, `if (t1 == t2) and (l1_idx != l2_idx):` was replaced with `if (t1 == t2):`? Why?
+
+1.4 What would happen if line 18 (`l2_idx = l2_idx + 1`) was removed? Why?
+
+1.5. What would happen if the `<` symbol in line 8 was replaced with `<=`? (In other words, what if it was changed to `while l1_idx <= len(WORD):`)? Why?
+
+
+2.  Consider the following code snippet:
+
+```python
+x = 0 
+y = "hello"
+
+while x < len(y): 
+    print(y[x])
+x += 1
+```
+
+What will be the outcome of this code? The commas indicate a new line.
+
+a. "h", "e", "l", "l", "o"  
+b. `IndexError: list index out of range`  
+c. The loop will run infinitely.  
+d. No output (the code contains an error)
+
+---
+
+3. What happens if the condition of a `while` loop is initially `False`?
+
+a. The loop will run once.  
+b. The loop will not run at all.  
+c. The loop will run infinitely.  
+d. The loop will throw an error.
+
+---
+
+4. What must the condition evaluate to for the following `while` loop to execute at least once?
+
+```python
+while 3 + 3 != 4 + 5.6: 
+```
+
+a. `True`  
+b. `False`  
+c. `true`  
+d. `false`  
+c. `None`
+
+---
+
+
+[Solutions](#conceptual-solutions)
+
+# Solutions
+
+## Conceptual Solutions
+
+1. **Here's a link to a [video of the solution](https://www.youtube.com/watch?v=NqNuPjnq-UE)!**
+
+<img class="img-fluid" src="/static/practice_worksheets/sp23/q1_sol1.png" alt ="The memory diagram includes a box on the top labeled Output and a box on the bottom labeled Stack, next to an empty area labeled Heap. 
+The Stack contains the variables WORD, l1 underscore idx, l2 underscore idx, t1, t2, and n underscore appearances. The WORD variable contains the value happy in quotes. 
+The variable l1 underscore idx has the value of 5, with previous values of 0, 1, 2, 3, and 4 all crossed out. L2 underscore idx has the final value of 5, with previous values of 0, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, and 4 all crossed out. T1 has the final value of y with previous values of an empty string, h, a, p, p, and y all in quotes and crossed out. T2 has the final value of y (in quotes) with previous values of an empty string, h, a, p, p, y, h, a, p, p, y, h, a, p, p, y, h, a, p, p, y, h, a, p, and p all in quote and crossed out. Finally, the variable n underscore appearances has the final value of 1 with previous values of 0, 1, 1, 1, 2, 1, and 2 all crossed out. 
+The output box contains the sentence h appears 1 times. Below that, on a separate line is the output a appears 1 times. Next, is the line p appears 2 times., p appears 2 times., and y appears 1 times. each on separate lines. 
+"/>
+
+(We do not *require* that you write out all interim values as long as the initial and final values are correct like in the solution below. However, writing the interim values will help for practice purposes and to avoid mistakes!)
+
+<img class="img-fluid" src="/static/practice_worksheets/sp23/q1_sol2.jpg" alt="The memory diagram has three columns, labeled from left to right Stack, Heap, and Output. Under the stack, there is a frame labeled Globals. 
+The globals frame contains the variables WORD, l1 underscore idx, l2 underscore idx, t1, t2, and n underscore appearances. The WORD variable contains the value happy in quotes. The variable l1 underscore idx has the value of 5 with the previous value of 0 crossed out. The variable l2 underscore idx has the value of 5 with the previous value of 0 crossed out. The variable t1 has the final value of y in quotes, with the previous value an empty string in quotes crossed out. The variable t2 has the final value of y in quotes, with the previous value of an empty string in quotes crossed out. Finally, the variable n underscore appearances has the value 1 with the previous value 0 crossed out.
+The heap column is empty.
+The output column contains the sentence h appears 1 times. Below that, on a separate line is the output a appears 1 times. Next is the line p appears 2 times., p appears 2 times., and y appears 1 times. each on separate lines. 
+">
+
+1.1 "y appears 1 times." would not print. This is because `l1_idx` will not enter the while loop for `l1_idx = 4`. (For more practice, it'd be good to diagram this instance out to see how it would impact the final values of other variables.)
+
+1.2 An infinite loop would occur because `l2_idx` would always equal `1` when returning to the top of the loop, and therefore `l2_idx < len(WORD)` will always be True.
+
+1.3 If `l1_idx != l2_idx` is no longer required, this means that each letter can count itself twice. For example, `WORD[0] == WORD[0]` is true, so `n_appearances` for `"h"` would increase to `2`.
+
+1.4 There would be an infinite loop because `l2_idx` will never increase, and therefore `l2_idx < len(WORD)` will always be True.
+
+1.5 There would be an index error because there would be the case where `l1_idx = 5`, so on line 9 `WORD[5]` would be searching for the element at index 5 in `"happy"`, when the indexes only go up to 4.
+
+2. **c. The loop will run infinitely.** This is because `x += 1` is outside the loop, so `x` will never increase within the loop, causing an infinite loop.
+
+3. **b. The loop will not run at all.** If the condition is initially `False`, the loop will skip entirely.
+
+4. **a. True.** The condition must evaluate to `True` for the loop to execute at least once. In this case, the condition `3 + 3 != 4 + 5.6` is always true, so the loop will run. -->
+</div>
+
+       
+
+    </div> 
+
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):        Alyssa Lytle,        Viktorya Hunanyan,        Megan Zhang, David Karash</span>
+    </div>
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2023 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>

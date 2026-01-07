@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Challenge Question - COMP110 - 24F</title>
+  <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1767801281.281182">
+</head>
+
+<body>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand">COMP 110</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/syllabus" class="nav-link">syllabus</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="CQs-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1>Challenge Question</h1>
+        <hr class="title" />
+      </div>
+    </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div id="menu-overview" class="link-page horizon-box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview  <img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul class="overview-item"><ul>
+<li><a href="#magic-methods-operator-overloads-and-union-types">Magic Methods, Operator Overloads, and Union Types</a>
+<ul>
+<li><a href="#setup">0: Setup</a></li>
+<li><a href="#point__str__">1: <code>Point#__str__</code></a>
+<ul>
+<li><a href="#example-usage">Example Usage</a></li>
+</ul></li>
+<li><a href="#point__mul__">2: <code>Point#__mul__</code></a>
+<ul>
+<li><a href="#example-usage-1">Example Usage:</a></li>
+</ul></li>
+<li><a href="#line__str__">3: <code>Line#__str__</code></a>
+<ul>
+<li><a href="#example-usage-2">Example Usage:</a></li>
+</ul></li>
+<li><a href="#line__mul__">4: <code>Line#__mul__</code></a>
+<ul>
+<li><a href="#example-usage-3">Example Usage:</a></li>
+</ul></li>
+<li><a href="#submission">5: Submission</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="magic-methods-operator-overloads-and-union-types">Magic Methods, Operator Overloads, and Union Types</h1>
+<h2 id="setup">0: Setup</h2>
+<p>For this challenge question, you’re going to modify the <code>Point</code> and <code>Line</code> classes we wrote together in class to add more functionality! This will mean modifying the <code>point.py</code> and <code>line.py</code> files inside <code>CQs/cq04</code>, so make sure you’ve set up those files correctly according to the instructions from class!</p>
+<h2 id="point__str__">1: <code>Point#__str__</code></h2>
+<p>First, you are going to write a <code>__str__</code> magic method to return Points in a readable way! It should return</p>
+<p><code>(&lt;x value&gt;, &lt;y value&gt;)</code></p>
+<p>where <code>&lt;x value&gt;</code> and <code>&lt;y value&gt;</code> are the <code>x</code> and <code>y</code> attributes of the <code>Point</code>, respectively.</p>
+<h3 id="example-usage">Example Usage</h3>
+<pre>
+<div class="terminal">$ python 
+>>> from CQs.cq04.point import Point
+>>> my_point: Point = Point(1.0, 2.0)
+>>> print(str(my_point))
+(1.0, 2.0)
+</div>
+</pre>
+<h2 id="point__mul__">2: <code>Point#__mul__</code></h2>
+<p>Now, you are going to add a <code>__mul__</code> method to overload the multiplication <code>*</code> operator!</p>
+<p>The goal is that when multiplying a <code>Point</code> object with a <code>factor: int</code>, it should create a new <code>Point</code> where both the <code>x</code> and <code>y</code> attributes should be the previous points attributes multiplied by <code>factor</code>.</p>
+<h3 id="example-usage-1">Example Usage:</h3>
+<pre>
+<div class="terminal">$ python 
+>>> from CQs.cq04.point import Point
+>>> my_point: Point = Point(1.0, 2.0)
+>>> new_point: Point = my_point * 3
+>>> print(new_point)
+(3.0, 6.0)
+</div>
+</pre>
+<h2 id="line__str__">3: <code>Line#__str__</code></h2>
+<p>Now that we have a way to visualize <code>Point</code> objects, you can use the <code>str</code> interpretation of Points to visualize a line!</p>
+<p>It should return</p>
+<p><code>(&lt;p1&gt; &lt;-&gt; &lt;p2&gt;)</code></p>
+<p>where <code>&lt;p1&gt;</code> and <code>&lt;p2&gt;</code> are the <code>p1</code> and <code>p2</code> attributes of the <code>Line</code>, respectively.</p>
+<p>(Note that you should NOT need to manually access the x and y attributes of each Point to print them! You should be able to just convert the points to a string using the <code>__str__</code> magic method you defined in Part 1.)</p>
+<h3 id="example-usage-2">Example Usage:</h3>
+<pre>
+<div class="terminal">$ python 
+>>> from CQs.cq04.line import Line
+>>> from CQs.cq04.point import Point
+>>> point_1: Point = Point(1.0, 2.0)
+>>> point_2: Point = Point(3.0, 4.0)
+>>> my_line: Line = Line(point_1, point_2)
+>>> print(str(my_line))
+(1.0, 2.0) <-> (3.0, 4.0)
+</div>
+</pre>
+<h2 id="line__mul__">4: <code>Line#__mul__</code></h2>
+<p>Now, you are going to add a <code>__mul__</code> method to <code>Line</code> to overload the multiplication <code>*</code> operator!</p>
+<p>The goal is that when multiplying a <code>Line</code> object with a <code>factor: int</code>, it should create a new <code>Line</code> where both the <code>p1</code> and <code>p2</code> attributes should be the previous Line’s attributes multiplied by <code>factor</code>.</p>
+<p>(Note that you should NOT need to manually access the x and y attributes of each Point to print them! You should be able to just multiply the points by <code>factor</code> using the <code>__mul__</code> magic method you defined in Part 2.)</p>
+<h3 id="example-usage-3">Example Usage:</h3>
+<pre>
+<div class="terminal">$ python 
+>>> from CQs.cq04.line import Line
+>>> from CQs.cq04.point import Point
+>>> point_1: Point = Point(1.0, 2.0)
+>>> point_2: Point = Point(3.0, 4.0)
+>>> my_line: Line = Line(point_1, point_2)
+>>> new_line: Line = my_line * 2
+>>> print(str(new_line))
+(2.0, 4.0) <-> (6.0, 8.0)
+</div>
+</pre>
+<!-- ## 1.1: Union Types
+Now, modify `__mul__` so that the `factor` parameter can be either a `float` or an `int`!
+
+### Example Usage:
+<pre>
+<div class="terminal">$ python 
+>>> from CQs.cq04.point import Point
+>>> my_point: Point = Point(1.0, 2.0)
+>>> new_point: Point = my_point * 3.0
+>>> print(new_point)
+x: 3.0; y: 6.0
+</div>
+</pre> -->
+<!-- ## 2: `__add__()`
+
+Now, you are going to add an `__add__()` method to overload the addition `+` operator!
+
+It should behave similarly to multiplication, where it creates a new `Point`, but now *adds* to the `x` and `y` attributes.
+
+<pre>
+<div class="terminal">$ python 
+>>> from CQs.cq04.point import Point
+>>> my_point: Point = Point(1.0, 2.0)
+>>> new_point: Point = my_point + 3.0
+>>> print(new_point)
+x: 4.0; y: 5.0
+</div>
+</pre>
+
+## 2.1: Union Types
+Now, modify `__add__` so that the `factor` parameter can be either a `float` or an `int`! -->
+<h2 id="submission">5: Submission</h2>
+<p>Create your submission with the following command:</p>
+<pre><code>python -m tools.submission CQs/cq04</code></pre>
+</div>
+
+       
+
+    </div> 
+
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s): Alyssa Lytle</span>
+    </div>
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2023 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Conditionals - COMP110 - 24F</title>
+  <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1767801268.0807219">
+</head>
+
+<body>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand">COMP 110</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/syllabus" class="nav-link">syllabus</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="lessons-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1>Conditionals</h1>
+        <hr class="title" />
+      </div>
+    </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div id="menu-overview" class="link-page horizon-box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview  <img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul class="overview-item"><ul>
+<li><a href="#questions">Questions</a>
+<ul>
+<li><a href="#truefalse">True/False</a></li>
+<li><a href="#conceptual">Conceptual</a></li>
+<li><a href="#code-snippet">Code Snippet</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="questions">Questions</h1>
+<h2 id="truefalse">True/False</h2>
+<ol type="1">
+<li><p>Every <code>if</code> statement must be followed by a paired <code>else</code> branch. (T/F)</p></li>
+<li><p>Lines contained in an <code>else</code> branch in Python do not have to be indented. (T/F)</p></li>
+<li><p>You can name a variable <code>else</code> in your program without Python confusing your variable’s name and the <code>else</code> keyword. (If you are unsure, this is a good one to try yourself!) (T/F)</p></li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li><p><code>False</code></p></li>
+<li><p><code>False</code></p></li>
+<li><p><code>False</code></p></li>
+</ol>
+</details>
+<p> </p>
+<h2 id="conceptual">Conceptual</h2>
+<ol type="1">
+<li><p>What does the condition of a conditional have to evaluate to in order to enter its then block?</p></li>
+<li><p>What does the condition of a conditional have to evaluate to in order to enter its <code>else</code> block?</p></li>
+<li><p>What happens when a return statement is encountered?</p></li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li><p>The condition must evaluate to <code>True</code>.</p></li>
+<li><p>The condition must evaluate to <code>False</code>.</p></li>
+<li><p>The return value is recorded in memory and the function is immediately exited.</p></li>
+</ol>
+</details>
+<p> </p>
+<h2 id="code-snippet">Code Snippet</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="dv">1</span>    <span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>: </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="dv">2</span>       x: <span class="bu">str</span> <span class="op">=</span> <span class="st">&quot;x&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="dv">3</span>       y: <span class="bu">str</span> <span class="op">=</span> <span class="st">&quot;y&quot;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="dv">4</span>       z: <span class="bu">str</span> <span class="op">=</span> x</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="dv">5</span>       y <span class="op">=</span> x</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="dv">6</span>       x <span class="op">=</span> <span class="st">&quot;y&quot;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="dv">7</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="dv">8</span>       <span class="cf">if</span> <span class="kw">not</span>(x <span class="op">!=</span> y <span class="kw">and</span> x <span class="op">!=</span> <span class="st">&quot;y&quot;</span>):</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="dv">9</span>           <span class="bu">print</span>(<span class="ss">f&quot;x: </span><span class="sc">{x}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="dv">10</span>      <span class="cf">else</span>:</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a><span class="dv">11</span>          <span class="bu">print</span>(<span class="st">&quot;&#39;if&#39; condition not met.&quot;</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a><span class="dv">12</span> </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a><span class="dv">13</span>   main()</span></code></pre></div>
+<ol type="1">
+<li><p>What is the condition in this code?</p></li>
+<li><p>What does the condition evaluate to? (Don’t do it in your head, draw a memory diagram!)</p></li>
+<li><p>What values should <code>x</code>, <code>y</code>, and/or <code>z</code> have to be assigned to in order for the <code>else</code> block to run?</p></li>
+<li><p>What other values can <code>x</code>, <code>y</code>, and/or <code>z</code> be assigned in order for the <code>if</code> block to run?</p></li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li><p><code>not(x != y and x != "y")</code></p></li>
+<li><p>The condition evaluates to <code>True</code>.</p></li>
+<li><p>To ensure the else block runs in the given code, the condition <code>x != y and x != "y"</code> must be true. This means <code>x</code> should be different from <code>y</code> and <code>x</code> should also be different from the string <code>"y"</code>. For example, setting <code>x = "a" and y = "b"</code> will satisfy this condition, making the else block execute.</p></li>
+<li><p>To make the <code>if</code> block run, the condition <code>not(x != y and x != "y")</code> must be true, which happens when <code>x</code> is either the same as <code>y</code> or the same as <code>"y"</code>, or both. In the original code where <code>x = "y"</code>, <code>y = "x"</code>, and <code>z = "x"</code>, the <code>if</code> block runs as <code>not(x != y and x != "y")</code> evaluates to <code>True</code>.</p></li>
+</ol>
+</details>
+<p> </p>
+<!-- ## 1. Multiple Choice
+
+1.1. Every `if` statement must be followed by a paired `else` branch. (T/F)
+
+1.2. Lines contained in an `else` branch in Python do not have to be indented. (T/F)
+
+1.3. You can name a variable `else` in your program without Python confusing your variable's name and the `else` keyword. (If you are unsure, this is a good one to try yourself!) (T/F)
+
+
+<details>
+  <summary><b>SHOW SOLUTIONS</b></summary>
+  
+
+1.1. `False`
+
+1.2. `False`
+
+1.3. `False`
+
+</details> -->
+<!-- &nbsp; -->
+<!-- 
+## 2. Inputting a Value
+
+ All subquestions of this problem will refer to this code snippet:
+
+        x: int = int(input("Pick a number: "))
+        y: int = 10
+        z: int = 2
+        x = x - 1
+        if x < 10:
+            print("A")
+        else:
+            if (x % z) == 0:
+                print ("B")
+        if x == (y + z):
+            print("C")
+        else: 
+            print("D")
+
+For the following subquestions, answer with a valid input value for `x` that would cause the given letter to print. It is OK for your input to cause other letters to print as well.
+If there is no such value, write "Unreachable".
+
+4.1 `A`
+
+4.2 `B`
+
+4.3 `C`
+
+4.4 `D`
+
+Now, answer with a valid input value for `x` that
+would cause the *exact* given letter(s) to print (no other letters). 
+If there is no such value, write "Unreachable".  
+4.5 
+
+`A` <br>
+`C`
+
+4.6 
+
+`B` <br>
+`C`
+
+
+4.7 
+
+`C`
+
+
+4.8 
+
+`D` -->
+<!-- 
+5. Write the format of a conditional using the following:
+You might not need to use all and can use any multiple times: `if`, `else`, `==`, `<condition>`, `False`, `True`, `<do something>`.
+
+6. Write the format of a conditional using the following:
+You might not need to use all and can use any multiple times: `while`, `<condition>`, `==`, `False`, `True`, `<do something>`. -->
+<!-- ## 2. Conceptual 
+
+2.1. What does the *condition* of a conditional have to evaluate to in order to enter its `then` block?
+
+2.2. What does the *condition* of a conditional have to evaluate to in order to enter its `else` block?
+
+2.3. What happens when a `return` statement is encountered?
+
+
+<details>
+  <summary><b>SHOW SOLUTIONS</b></summary>
+  
+
+2.1. The condition must evaluate to `True`.
+
+2.2. The condition must evaluate to `False`.
+
+2.3. The return value is recorded in memory and the function is immediately exited.
+
+</details>
+
+&nbsp; -->
+<!-- ## 3. Code Snippet 1
+
+All subquestions of this problem will refer to this pseudo code snippet:
+
+```
+    if <condition1>:
+        <do_something> # then block
+    elif <condition2>:
+        <do_something> # elif block
+    else:
+        <do_something> # else block
+```
+
+3.1. From the general format of a conditional with an `elif` block, what needs to be True and/or False in order for the `elif` block to evaluate?
+
+3.2. Is `<condition1>` not being met the same as having `if <condition1> == False:`? -->
+<!-- 
+## 3. Code Snippet 
+
+All subquestions of this problem will refer to this code snippet:
+
+```python
+    def main() -> None: 
+        x: str = "x"
+        y: str = "y"
+        z: str = x
+        y = x
+        x = "y"
+
+        if not(x != y and x != "y"):
+            print(f"x: {x}")
+        else:
+            print("'if' condition not met.")
+
+    main()
+```
+
+3.1. What is the condition in this code?
+
+3.2. What does the condition evaluate to? (Don’t do it in your head, draw a memory diagram!)
+
+3.3. What values should x, y, and/or z have to be assigned to in order for the else block to run?
+
+3.4. What other values can x, y, and/or z be assigned in order for the `if` block to run?
+
+
+
+<details>
+  <summary><b>SHOW SOLUTIONS</b></summary>
+  
+
+3.1. `not(x != y and x != "y")`
+
+3.2. The condition evaluates to `True`.
+
+3.3. To ensure the `else` block runs in the given code, the condition `x != y and x != "y"` must be true. This means `x` should be different from `y` and `x` should also be different from the string `"y"`. For example, setting `x = "a"` and `y = "b"` will satisfy this condition, making the `else` block execute.
+
+3.4. To make the `if` block run, the condition `not(x != y and x != "y")` must be true, which happens when `x` is either the same as `y` or the same as `"y"`, or both. In the original code where `x = "y"`, `y = "x"`, and `z = "x"`, the `if` block runs as `not(x != y and x != "y")` evaluates to true.
+
+
+</details>
+
+&nbsp; -->
+<!-- ---
+
+
+[solutions](#conceptual-solutions)
+
+# Solutions 
+
+## Conceptual Questions - Solutions
+
+1.1. F
+1.2. F
+1.3. F -->
+<!-- 4. 
+    
+    4.1 Any value < 11
+
+    4.2 Any value >= 11 and odd. (Since `x % z == 0` must be True and `z` is 2, this means `x - 1` must be even.)
+
+    4.3 13
+
+    4.4 Any value != 13
+
+    4.5 Unreachable
+
+    4.6 13
+
+    4.7 Unreachable
+
+    4.8 Any value >= 11 and even -->
+<!-- 
+5. 
+```python
+    if <condition> == True:
+        <do_something>
+    else:
+        <do_something>
+```
+OR
+```python
+    if <condition>:
+        <do_something>
+    else:
+        <do_something>
+```
+
+6. 
+```python
+    while <condition> == True:
+        <do_something>
+```
+OR
+```python
+    while <condition>:
+        <do_something>
+``` -->
+<!-- 2.1. The condition must evaluate to `True`.
+
+2.2. The condition must evaluate to `False`.
+
+2.3. The return value is recorded in memory and the function is immediately exited. -->
+<!-- 
+3.1. `<condition1>` must not be met (condition should evaluate to `False`) AND `<condition2>` must be met (condition should evaluate to `True`).
+
+3.2. In this case, yes. If we had something like this:
+```python
+if ("hello" == "hello") == False:
+```
+the `<condition>` in this case would be everything in between the `if` and the `:`. In the pseudo-code, we are separating the `<condition>` to be separate from the rest (`== False`), while in real code the condition is always everything after the `if` and before the `:`. -->
+<!-- ---
+
+3.1. `not(x != y and x != "y")`
+
+3.2. The condition evaluates to `True`.
+
+3.3. To ensure the `else` block runs in the given code, the condition `x != y and x != "y"` must be true. This means `x` should be different from `y` and `x` should also be different from the string `"y"`. For example, setting `x = "a"` and `y = "b"` will satisfy this condition, making the `else` block execute.
+
+3.4. To make the `if` block run, the condition `not(x != y and x != "y")` must be true, which happens when `x` is either the same as `y` or the same as `"y"`, or both. In the original code where `x = "y"`, `y = "x"`, and `z = "x"`, the `if` block runs as `not(x != y and x != "y")` evaluates to true.
+
+--- -->
+</div>
+
+       
+
+    </div> 
+
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):        Alyssa Lytle,        Viktorya Hunanyan,        Megan Zhang, David Karash</span>
+    </div>
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2023 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>

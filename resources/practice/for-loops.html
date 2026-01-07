@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> For Loops Questions - COMP110 - 24F</title>
+  <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1767801271.6518543">
+</head>
+
+<body>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand">COMP 110</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/syllabus" class="nav-link">syllabus</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="lessons-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1>For Loops Questions</h1>
+        <hr class="title" />
+      </div>
+    </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div id="menu-overview" class="link-page horizon-box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview  <img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul class="overview-item"><ul>
+<li><a href="#for-loops"><code>for</code> loops</a>
+<ul>
+<li><a href="#conceptual-questions">Conceptual Questions</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h2 id="for-loops"><code>for</code> loops</h2>
+<h3 id="conceptual-questions">Conceptual Questions</h3>
+<ol type="1">
+<li><p>Refer to the following code snippet to answer these questions: <code>py         stats: list[int] = [7, 8, 9]         index: int = 0         total: int = 100         while index &lt; len(stats):             total -= stats[index]             index += 1</code></p>
+<p>1.1. Rewrite the following code snippet with same functionality using a <code>for ... in</code> loop.</p>
+<p>1.2. Rewrite the following code snippet with same functionality using a <code>for ... in range(...)</code> loop.</p></li>
+<li><p>(Challenge Question) Can you iterate through an object using a <code>for</code> loop while also modifying it (removing or adding elements)?</p></li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li><p>Original code copied for reference: <code>py         stats: list[int] = [7, 8, 9]         index: int = 0         total: int = 100         while index &lt; len(stats):             total -= stats[index]             index += 1</code> 1.1.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>    stats: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    total: <span class="bu">int</span> <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    <span class="cf">for</span> elem <span class="kw">in</span> stats:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>        total <span class="op">-=</span> elem</span></code></pre></div>
+<p>1.2</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>    stats: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    total: <span class="bu">int</span> <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>    <span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(stats)):</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>        total <span class="op">-=</span> stats[index]</span></code></pre></div></li>
+<li><p>No, generally you cannot safely iterate through an object (like a list or dictionary) while simultaneously modifying it by adding or removing elements during the iteration. Doing so can lead to unexpected behavior or errors like the <code>RuntimeError: dictionary changed size during iteration</code>. When you iterate over an object, Python keeps track of the size and structure of that object. If you modify it (e.g., by adding or removing elements), this can disrupt the iteration process because the underlying data structure changes during traversal.</p>
+<p>Removing elements: Can cause the iteration to skip items or crash because the index or key you’re iterating over might no longer exist. Adding elements: Can lead to the same type of issue, as the size of the object changes unexpectedly, leading to errors.</p>
+<p>Take for example this code:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>    <span class="kw">def</span> add_task(todo_list, task):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>        task_found: <span class="bu">bool</span> <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>        <span class="cf">for</span> existing_task <span class="kw">in</span> todo_list:</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>            <span class="cf">if</span> existing_task <span class="op">==</span> task:</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>                task_found <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>            <span class="cf">if</span> <span class="kw">not</span> task_found:</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>                todo_list[task] <span class="op">=</span> <span class="st">&#39;not done&#39;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a>    <span class="kw">def</span> mark_done(todo_list, task):</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>        <span class="cf">for</span> existing_task <span class="kw">in</span> todo_list:</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a>            <span class="cf">if</span> existing_task <span class="op">==</span> task:</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a>                todo_list[existing_task] <span class="op">=</span> <span class="st">&#39;done&#39;</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true"></a>    <span class="kw">def</span> main():</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true"></a>        todo_list: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">str</span>] <span class="op">=</span> {<span class="st">&#39;Buy groceries&#39;</span>: <span class="st">&#39;not done&#39;</span>, <span class="st">&#39;Read a book&#39;</span>: <span class="st">&#39;done&#39;</span>, <span class="st">&#39;Write report&#39;</span>: <span class="st">&#39;not done&#39;</span>, <span class="st">&#39;Call mom&#39;</span>: <span class="st">&#39;done&#39;</span>}</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true"></a>        add_task(todo_list, <span class="st">&#39;Finish homework&#39;</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true"></a>        mark_done(todo_list, <span class="st">&#39;Write report&#39;</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="st">&quot;Current to-do list:&quot;</span>, todo_list)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true"></a>    <span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true"></a>        main()</span></code></pre></div></li>
+</ol>
+</details>
+</div>
+
+       
+
+    </div> 
+
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):        Alyssa Lytle,        Megan Zhang,        David Karash, Benjamin Eldridge</span>
+    </div>
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2023 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>

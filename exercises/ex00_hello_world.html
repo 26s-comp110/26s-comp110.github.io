@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1767892378.91044">
+  <link rel="stylesheet" href="/static/styles.css?v=1767976633.1343396">
 </head>
 
 <body>
@@ -84,7 +84,9 @@
 <p>Our programming journey begins in Visual Studio Code, a free, leading text-editor designed for software development. Go ahead and open Visual Studio Code!</p>
 <p>Once open, from the “File” menu, select “Open Recent…”. After completing the setup instructions above, you should see two entries with <code>comp110-...-workspace-[Your GitHub Username]</code>. You want to select the one with <code>[Dev Container]</code> at the end of it. Go ahead and open it up!</p>
 <p>You should be greeted with window that looks like the following (if tabs are open in the main part of the window, you can close them):</p>
-<p><img class="img-fluid" src="/static/exercises/ex00/vscode-dev-container.png" alt="VSCode Dev Container"></p>
+<figure>
+<img src="/static/exercises/ex00/vscode-dev-container.png" alt="" /><figcaption>VSCode Dev Container</figcaption>
+</figure>
 <p>There are three important parts to recognize in this window you will make use of through the semester:</p>
 <ol type="1">
 <li><p>In the bottom left corner, you should see “Dev Container: comp110-…” as shown in the photo above. If you only see the <code>&gt;&lt;</code> icon, open the VSCode command palette by pressing <code>Ctrl+Shift+P</code> (or <code>Cmd+Shift+P</code> on Mac) and type “Reopen in Container”. This will open the Dev Container and you should see the “Dev Container: comp110-…” appear.</p></li>
@@ -93,7 +95,7 @@
 </ol>
 <h2 id="starting-trailhead">2. Starting Trailhead</h2>
 <p>Open the “Run and Debug” pane, as discussed above, and press the green play button. You should see a new terminal window open in the bottom of the screen and a message that says “Starting Trailhead server at http://localhost:1110” appear in a terminal. You can close this terminal pane with the X after seeing this message.</p>
-<iframe style="aspect-ratio: 16/9; width:100%;" src="https://www.youtube.com/embed/M1FeIzICA9A?si=tIBVX_V-eM00MDOo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+<iframe style="aspect-ratio: 16/9; width:100%;" src="https://www.youtube.com/embed/Ul9ompArzpY?si=ag3p72ENJ3ZziqeU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
 </iframe>
 <p>As shown in the video above, your next step is to open a web browser (Google Chrome is recommended for our course) and navigate to <code>http://localhost:1110</code>. You should see Trailhead’s home page! If you do not, try the address <code>http://127.0.0.1:1110</code> instead. These two web addresses, <code>localhost</code> and <code>127.0.0.1</code> refer to your personal computer and the <code>:1110</code> refers to the “port number” Trailhead is running on. One-thousand 110, hopefully a memorable number :)</p>
 <p>From the “Trailhead” home screen, your workspace’s modules are listed. The “welcome” module refers to the <code>welcome.py</code> found in the “File Explorer” pane of VSCode. Opening the “.py” file, you can see the code which resulted in the message being displayed in Trailhead.</p>
@@ -119,7 +121,9 @@
 <div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>greet(name<span class="op">=</span><span class="st">&quot;Sophie&quot;</span>)</span></code></pre></div>
 <p>Feel free to try calling the function with other names, as well!</p>
 <p>Your interactions should look something like this:</p>
-<p><img class="img-fluid" src="/static/exercises/ex00/repl-greet.png" alt="`greet` REPL Interactions"></p>
+<figure>
+<img src="/static/exercises/ex00/repl-greet.png" alt="" /><figcaption><code>greet</code> REPL Interactions</figcaption>
+</figure>
 <!-- <div class="turtle-talk">
 <figure>
 ![Turtle Talk](/static/camp110/cozy-turtle.png)
@@ -133,7 +137,9 @@ At times, this can feel tedious, but when you understanding and appreciate the d
 </div>
 </div> -->
 <p>Let’s break down what is happening here by starting with the function definition in VSCode. The following image points out the important parts of this function definition:</p>
-<p><img class="img-fluid" src="/static/exercises/ex00/function-syntax.png"></p>
+<figure>
+<img src="/static/exercises/ex00/function-syntax.png" alt="" /><figcaption><code>greet</code> Function Definition</figcaption>
+</figure>
 <p>A function definition is like a cooking recipe: it has a name, some required ingredients, and an expected result. Inside the definition are one or more steps the recipe follows to produce a result. For now, our functions will be simple, single-step recipes, but as you learn more about programming, you will learn how to write more complex functions. Importantly, a function definition does not actually do or produce anything until it is “called” or “invoked”, like a printed recipe does not produce any food until it is “followed” or “cooked”.</p>
 <ol type="1">
 <li><p>Function definitions begin with the <em>keyword</em> <code>def</code>, short for “define”. The function name is <code>greet</code>, which is an <em>identifier</em>. In Python, an <em>identifier</em> is any sequence of letters, numbers, and underscores that starts with a letter or underscore. An <em>identifier</em> is just a name <em>we as programmers</em> choose to refer to things in our programs. In this case it’s the name for the function we are defining.</p></li>
@@ -145,7 +151,9 @@ At times, this can feel tedious, but when you understanding and appreciate the d
 <li><p>The <code>return</code> keyword is followed by an <em>expression</em>. This <em>expression</em> must evaluate to the same type as #3 the function’s specified return type. In this case, the expression is <code>"Hello, " + name + "!"</code>. This expression is a <em>string concatenation</em> expression that results in forming a larger <code>str</code> value out of the string literal <code>"Hello, "</code> being concatenated with the input parameter value <code>name</code> and the string literal <code>"!"</code>.</p></li>
 </ol>
 <p>Now that you have a sense of the key parts of this function definition, let’s break down the function call expressions you typed into the REPL and understand how they relate to the function definition.</p>
-<p><img class="img-fluid" src="/static/exercises/ex00/function-call-syntax.png"></p>
+<figure>
+<img src="/static/exercises/ex00/function-call-syntax.png" alt="" /><figcaption><code>greet</code> Function Call Expression</figcaption>
+</figure>
 <p>If defining a function is like writing down a recipe for biscuits, <em>calling a function is like baking the biscuits</em>. Mmm… let’s bake some biscuits!</p>
 <p>As a reminder from the reading on <em>expressions</em>, a function call is an expression like any other expresion: it evaluates to a value of a specific type. In the REPL, you wrote a function call expression, then pressed enter, which caused the expression to evaluate, and finally you were presented with the value and type the function call expression evaluated to.</p>
 <ol type="1">
@@ -192,7 +200,7 @@ Hi, **Theo** again!
 You are doing great! I know this level of detail is a lot to take in, but let's slow down and understand this final snippet of code needed to make EX00 a complete program!
 </div>
 </div> -->
-<p>Let’s reveal at what is going on in this little snippet! First, the line <code>if __name__ == "__main__":</code> is a special kind of statement called a <em>conditional statement</em> you’ll learn about in a few weeks. The effect it has here is when you run this program in the “Run” tab, the indented code beneath the <code>if</code> statement will be evaluated. However, when you load this program in the REPL of the “Interact” tab, the code beneath the <code>if</code> statement <em>will not</em> be run. This gives us the best of both worlds.</p>
+<p>Let’s reveal what is going on in this little snippet! First, the line <code>if __name__ == "__main__":</code> is a special kind of statement called a <em>conditional statement</em> you’ll learn about in a few weeks. The effect it has here is when you run this program in the “Run” tab, the indented code beneath the <code>if</code> statement will be evaluated. However, when you load this program in the REPL of the “Interact” tab, the code beneath the <code>if</code> statement <em>will not</em> be run. This gives us the best of both worlds.</p>
 <p>Next, under the <code>if</code> statement, you added some nested function calls. The innermost function call is <code>input("What is your name? ")</code>. The <code>input</code> function is a <a href="https://docs.python.org/3/library/functions.html#input">Python built-in</a> that prompts the user of a program for a textual input, waits for the user to enter some text and once the user does, the function call expression to <code>input</code> evaluates to the <code>str</code> of text the user typed in. For the sake of simplifying the explanation, let’s assume that you typed in the <code>"Campers"</code> when prompted for a name.</p>
 <p>The next function call evaluated is <code>greet(name="Campers")</code>, where the <code>name</code> argument will be <code>"Campers"</code> because that’s what the call to <code>input</code> evaluated to in the previous paragraph. This function call expression works through the same set of steps described in the previous section and calls your <code>greet</code> function! Remember, your <code>greet</code> function returns a value of type <code>str</code>, so this function call expression also evaluates to a <code>str</code> whose value is <code>"Hello, Campers!"</code>.</p>
 <p>Finally, the last function call expression to evaluate is <code>print("Hello, Campers!")</code>. This buit-in function “prints”, or displays, the argument it is given to your program’s output and causes the text, without any quotes or its type, to appear as the next line of textual output in your program. As an astute reader, I am sure you are wondering, “if the <code>print</code> function call is an expression and every expression evaluates to a value, what type of value does <code>print</code> evaluate to?” I’m so glad you were wondering! The function <code>print</code> is a special kind of function that evaluates to a “nothing value” in Python called <code>None</code>; functions that return <code>None</code> tend to have “side-effects” on the “environment”. In this case, <code>print</code>’s side-effect is causing output to display on your screen.</p>
@@ -212,7 +220,7 @@ You are doing great! I know this level of detail is a lot to take in, but let's 
 <h2 id="submitting-your-work">6. Submitting Your Work</h2>
 <p>Now, let’s get your work submitted to the autograder! In VSCode, open a new integrated Terminal with `Ctrl+Shift+``, or going to the Terminal menu and selecting “New Terminal”. We will learn more about what the terminal is and gain experience with “command line interfaces” later in the course. For now, enter the following command into the terminal and press enter:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="ex">python</span> -m tools.submission exercises/ex00_hello_world.py</span></code></pre></div>
-<p>You will notice a file appeared in your workspace named <code>25.05.dd-hh.mm.ss-ex00_hello_world.py.zip</code>. You will see numbers for the current day of the month in place of <code>dd</code>, 24-hour digits in place of <code>hh</code>, minutes in place of <code>mm</code>, and so on. This “zip” file contains your <code>ex00_hello_world.py</code> file and is what you will submit to the autograder.</p>
+<p>You will notice a file appear in your workspace named <code>26.01.dd-hh.mm.ss-ex00_hello_world.py.zip</code>. You will see numbers for the current day of the month in place of <code>dd</code>, 24-hour digits in place of <code>hh</code>, minutes in place of <code>mm</code>, and so on. This “zip” file contains your <code>ex00_hello_world.py</code> file and is what you will submit to the autograder.</p>
 <p>In Gradescope, open assignment “EX00 - Hello World”. You should see an area to upload a zip file. Click this area and browse to your course’s workspace directory on your computer. You should see the zip file you just created. Select it and upload it to Gradescope. Autograding should complete within about a minute and you should see a score of 100%, or more if you are submitting early. If you see less than 100%, try to understand the feedback and resubmit. If you are still having trouble, please come see us in office hours!</p>
 <h2 id="make-a-backup-checkpoint-commit">7. Make a Backup Checkpoint “Commit”</h2>
 <p>Now that your first program is complete, let’s practice making a backup. Visual Studio Code has built-in support for <code>git</code> Source Control. Source Control tools are made to help create versioned checkpoints of a project’s source code (your program is source code!) amont other uses. The current de facto Source Control system is called <code>git</code>. As one more piece of terminology, a checkpointed version in git is called a <code>commit</code>. Once your work is in a <code>commit</code> checkpoint, you can always return back to your project at that point in time without the risk of losing work. We encourage committing work to backup <em>at least</em> each time you submit a project for grading or are finishing out a working session for the day. Commits are free to make and can only help you avoid losing work; use them liberally!</p>
@@ -260,7 +268,7 @@ It is important to take a step back and see the forest for the trees. Connecting
     </div> 
 
     <div class="authors-box bg-dark mt-4 py-3 ps-4">
-      <span> Contributor(s):        Kris Jordan, Izzi Hinks</span>
+      <span> Contributor(s):        Kris Jordan,        Izzi Hinks, Alyssa Lytle</span>
     </div>
   </div>
   <div class='link-page mt-3 container'>

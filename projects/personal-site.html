@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1776090120.4022753">
+  <link rel="stylesheet" href="/static/styles.css?v=1776126830.2665527">
 </head>
 
 <body>
@@ -65,7 +65,7 @@
 <ul>
 <li><a href="#clone-the-repo">1. Clone the Repo</a></li>
 <li><a href="#create-a-home-github-repository-for-your-site">2. Create a Home Github repository for your site</a></li>
-<li><a href="#great-a-github-repository-for-your-project">3. Great a Github Repository for your Project</a></li>
+<li><a href="#great-a-second-github-repository-for-your-project">3. Great a Second Github Repository for your Project</a></li>
 <li><a href="#publish-your-site-to-github">4. Publish Your Site to Github</a>
 <ul>
 <li><a href="#update-your-site-configuration">4.1 Update Your Site Configuration</a></li>
@@ -86,18 +86,27 @@
         </div>
         <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="instructions">Instructions</h1>
 <h2 id="clone-the-repo">1. Clone the Repo</h2>
-<p>Open a new Visual Studio window and clone the following repo: <a href="https://github.com/AlyssaLytle/personal-site.github.io.git">https://github.com/AlyssaLytle/personal-site.github.io.git</a></p>
+<p>You are going to create a new repository <em>outside</em> of your Comp110 workspace.</p>
+<ol type="1">
+<li><p>Open a new Visual Studio window by clicking the <em>File</em> menu in the top bar and selecting <em>New Window</em>.</p></li>
+<li><p>Under the <em>Start</em> menu, click <em>Clone Git Repository…</em></p></li>
+<li><p>The command pallette should open at the top prompting you for a URL. Copy/Paste the following URL:</p></li>
+</ol>
+<p><a href="https://github.com/AlyssaLytle/personal-site.github.io.git">https://github.com/AlyssaLytle/personal-site.github.io.git</a></p>
+<ol start="4" type="1">
+<li>Select a destination to save the new repository and open the repository when prompted.</li>
+</ol>
 <h2 id="create-a-home-github-repository-for-your-site">2. Create a Home Github repository for your site</h2>
 <p><!-- named `<github-username>.github.io` --></p>
 <ol type="1">
 <li><p>Navigate to <a href="https://github.com/">https://github.com/</a> and click on the “New” button to create a new repository.</p></li>
-<li><p>Name your repository <code>&lt;github-username&gt;.github.io</code> where <code>&lt;github-username&gt;</code> is your github username and choose whether or not to set your repo to be Public or Private–it’s your choice!.</p></li>
+<li><p>Name your repository <code>&lt;github-username&gt;.github.io</code> where <code>&lt;github-username&gt;</code> is your github username and choose whether or not to set your repo to be Public or Private–it’s your choice!</p></li>
 </ol>
-<p>(This will not impact who can see your site. It’ll just impact who can see the <em>repository</em> for your site.) It’s probably best to set your visibility to Private. This will give you some permission limitations when pulling/pushing to github though, so you’ll have to <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">set up an SSH key</a> and use it to connect your Github account with your computer.</p>
+<p>(This will not impact who can see your site. It’ll just impact who can see the <em>repository</em> for your site.) It’s probably best to set your visibility to Private.)</p>
 <ol start="3" type="1">
 <li>Click “Create Repository”</li>
 </ol>
-<h2 id="great-a-github-repository-for-your-project">3. Great a Github Repository for your Project</h2>
+<h2 id="great-a-second-github-repository-for-your-project">3. Great a Second Github Repository for your Project</h2>
 <p>Now you want to create a separate repository for your course project. You will have a special url like: <code>&lt;github-username&gt;.github.io/&lt;custom-path&gt;</code>. You get to pick the <code>&lt;custom-path&gt;</code> for your site!</p>
 <ol type="1">
 <li><p>Navigate to <a href="https://github.com/">https://github.com/</a> and click on the “New” button to create a new repository.</p></li>
@@ -127,7 +136,7 @@
 <p>After you do this, your site should be live at <code>https://&lt;github-username&gt;.github.io</code></p>
 <h2 id="add-content-make-it-pretty">6. Add Content + Make it Pretty</h2>
 <p>You’ll want to start by further modifying the <code>_config.yml</code> file to add some info about yourself!</p>
-<p>For your actual assignment webpage, you’ll want to edit the <code>index.md</code> file. The language you will be using to write this is called markdown. There’s some guidance in the file for basic syntax.</p>
+<p>For your actual assignment webpage, you’ll want to edit the <code>index.md</code> file. The language you will be using to write this is called markdown–the same language you used in your Jupyter notebook text cells! There’s some guidance in the file for basic syntax.</p>
 <h3 id="optional-styling">Optional Styling</h3>
 <p>You can also change the Jekyll theme of your site to style it! Here is a list of the currently supported themes: <a href="https://pages.github.com/themes/">https://pages.github.com/themes/</a>. Click on the Theme you want and it’ll give you instructions on how to install it!</p>
 <p><em>(I’ll add more here later.)</em></p>

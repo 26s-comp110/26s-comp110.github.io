@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1776265735.7209527">
+  <link rel="stylesheet" href="/static/styles.css?v=1776266074.1600194">
 </head>
 
 <body>
@@ -113,7 +113,7 @@
 <li><p>Name your repository <code>&lt;custom-path&gt;</code> where <code>&lt;custom-path&gt;</code> is whatever you choose! Set the repository visibility to Public.</p></li>
 </ol>
 <h2 id="publish-your-site-to-github">4. Publish Your Site to Github</h2>
-<p>Now we want to link the site you just cloned to visual studio to Github!</p>
+<p>Now we want to link the site you just cloned in visual studio in Part 1 to the Github repository you created in Part 4!</p>
 <p>Open Visual Studio and then open the directory that you just cloned.</p>
 <h3 id="update-your-site-configuration">4.1 Update Your Site Configuration</h3>
 <ol type="1">
@@ -125,7 +125,18 @@
 <ol type="1">
 <li><p>Open the command palette, and type <code>Git: Initialize Repository</code> you can select <code>personal-site.github.io</code> as your workspace folder.</p></li>
 <li><p>Open the command palette again and type <code>Git: Add Remote</code> and input the link to your git repo (<code>https://github.com/&lt;github-username&gt;/&lt;custom-path&gt;</code>). When prompted, you can name your remote “main”.</p></li>
-<li><p>Commit your changes and push to origin!</p></li>
+<li><p>Commit your changes and push:</p>
+<ol type="1">
+<li>Open the Source Control panel (Command Palette: “Show SCM” or click the icon with three circles and lines on the activity panel).</li>
+<li>Notice the files listed under Changes. These are files you’ve made modifications to since your last backup.</li>
+<li>Move your mouse’s cursor over the word <em>Changes</em> and notice the + symbol that appears. Click that plus symbol to add all changes to the next backup. You will now see the files listed under “Staged Changes”.
+<ul>
+<li>If you do not want to backup <em>all</em> changed files, you can select them individually. For this course you’re encouraged to back everything up.</li>
+</ul></li>
+<li>In the Message box above the <em>Commit</em> button, give a brief description of what you’ve changed and are backing up. This will help you find a specific backup (called a “commit”) if needed. In this case a message such as, “Progress on Exercise 3” will suffice.</li>
+<li>Press the Check icon to make a <em>Commit</em> (a version) of your work.</li>
+<li>Finally, press the Ellipses icon (…), look for “Pull/Push” submenu, and select “Push to…”, and in the dropdown select main.</li>
+</ol></li>
 </ol>
 <h2 id="configure-a-publishing-source-for-your-github-pages-site">5. Configure a publishing source for your GitHub Pages site</h2>
 <p><em>(It is possible that this step will be automated for you! You can check by going to your site URL: <code>&lt;github-username&gt;.github.io/&lt;custom-path&gt;</code> and seeing if anything shows up! It may take a few minutes.)</em></p>

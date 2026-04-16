@@ -1,5 +1,4 @@
 {
-    "2026-04-13": [],
     "2026-04-14": [
         {
             "kind": "CL",
@@ -29,11 +28,11 @@
         {
             "kind": "EX",
             "n": 9,
-            "title": "Data Project (Due Monday 4/27)",
+            "title": "Data Analysis for Continuous Improvement (Due Monday 4/27)",
             "date": "2026-04-16",
             "deadline": "2026-04-27",
             "links": {
-                "": "/"
+                "": "/exercises/data-analysis.html"
             }
         }
     ],
